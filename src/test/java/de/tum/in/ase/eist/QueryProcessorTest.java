@@ -30,4 +30,12 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void testKnowsMyName() {
+		String actual = queryProcessor.process("name");
+		if (!actual.contains("CaRina")) {
+			fail("The QueryProcessor does not know my name!");
+		}
+	}
+
 }
