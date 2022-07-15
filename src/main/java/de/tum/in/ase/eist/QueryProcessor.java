@@ -15,8 +15,20 @@ public class QueryProcessor {
             return "CaRina";
         } else if (query.contains("chicken")) { // TODO extend the programm here
             return "I love nuggets!";
-        } else if (query.contains("6 plus 0")) {
-            return "6";
+        } else if (query.contains("plus")) {
+            String[] words = query.split(" ");
+            int result = Integer.parseInt(words[2]) + Integer.parseInt(words[4]);
+            return "" + result;
+        } else if (query.contains("largest")) {
+            String[] words = query.split(":");
+            String[] words2 = words[1].split(",");
+            int x = 0;
+            for (int i = 0; i < words2.length; i++) {
+                if (Integer.parseInt(words2[i].trim()) > x) {
+                    x = Integer.parseInt(words2[i].trim());
+                }
+            }
+            return "" + x;
         } else {
             return "";
         }

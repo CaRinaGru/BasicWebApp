@@ -40,10 +40,19 @@ class QueryProcessorTest {
 
 	@Test
 	void test1() {
-		String actual = queryProcessor.process("6 plus 0");
-		if (!actual.contains("6")) {
+		String actual = queryProcessor.process("what is 16 plus 13");
+		if (!actual.contains("29")) {
 			fail("Not correct!");
 		}
 	}
+
+	@Test
+	void test2() {
+		String actual = queryProcessor.process("which of the following numbers is the largest: 16, 45, 74, 659");
+		if (!actual.contains("659")) {
+			fail("Not correct!");
+		}
+	}
+
 
 }
