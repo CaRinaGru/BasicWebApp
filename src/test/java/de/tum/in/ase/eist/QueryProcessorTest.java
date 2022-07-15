@@ -38,4 +38,12 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void test1() {
+		String actual = queryProcessor.process("6 plus 0");
+		if (!actual.contains("6")) {
+			fail("Not correct!");
+		}
+	}
+
 }
